@@ -1,0 +1,25 @@
+{
+  "name": "pwa-starter",
+  "version": "1.0.0-alpha.0",
+  "description": "Progressive Web App Starter",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuinntyneBrown/pwa-starter.git"
+  },
+  "keywords": [
+    "Progressive",
+    "Web",
+    "App",
+    "Starter"
+  ],
+  "author": "Quinntyne Brown",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/QuinntyneBrown/pwa-starter/issues"
+  },
+  "homepage": "https://github.com/QuinntyneBrown/pwa-starter#readme"
+}
