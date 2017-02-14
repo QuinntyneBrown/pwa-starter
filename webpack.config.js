@@ -5,13 +5,17 @@ var UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 
 module.exports = {
     devtool: 'source-map',
-    entry: {
-        'app': './src/main'
+    entry: appShell ? {
+        shell: "./src/app/shell"
+    } : {
+        dashboard: "./src/app/dashboard",
+        login: "./src/app/login",
+        admin: "./src/app/admin"
     },
     output: {
-        path: __dirname + "/dist",
-        filename: "[name].js",
-        publicPath: "dist/"
+        path: path.resolve(__dirname, "dist", output),
+        filename: "[name]-[chunkhash].js",
+        chunkFilename: "[chunkhash].js"
     },
     resolve: {
         extensions: ['.ts', '.js', '.jpg', '.jpeg', '.gif', '.png', '.css', '.html']
@@ -19,7 +23,7 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.scss$/, exclude: /node_modules/, loaders: ['raw-loader', 'sass-loader'] },            
-            { test: /\.html$/, loaders: ['raw-loader'] },
+            { test: /\.html$/, loaders: ['html-loader'] },
             { test: /\.ts$/, loaders: ['awesome-typescript-loader'], exclude: /node_modules/ }
         ]
     },
